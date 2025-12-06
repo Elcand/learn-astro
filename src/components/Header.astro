@@ -1,1 +1,63 @@
-<h1>header</h1>
+<header>
+  <nav class="main-nav">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/about">About</a></li>
+    </ul>
+  </nav>
+</header>
+
+<style>
+  /* --- Variabel Warna (Mudah Diubah) --- */
+  :root {
+    --bg-color: #2c3e50; /* Warna latar belakang navbar */
+    --text-color: #ecf0f1; /* Warna teks link */
+    --hover-bg-color: #3498db; /* Warna latar saat hover */
+    --hover-text-color: #ffffff; /* Warna teks saat hover */
+  }
+
+  /* --- Gaya Umum --- */
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+
+  header {
+    margin-bottom: 30px;
+    padding: 0 20px; /* Beri ruang di kiri dan kanan */
+    border-radius: 8px;
+  }
+
+  .main-nav ul {
+    display: flex;
+    list-style: none; /* Hapus bullet point */
+    margin: 0;
+    padding: 0;
+    gap: 5px; /* Spasi antar item, lebih modern dari margin-right */
+  }
+
+  .main-nav li a {
+    display: block; /* Membuat seluruh area bisa diklik */
+    text-decoration: none;
+    padding: 15px 20px; /* Padding lebih besar untuk area klik yang nyaman */
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease; /* Animasi halus */
+  }
+
+  /* --- Responsif: Tampilan Mobile --- */
+  @media (max-width: 600px) {
+    .main-nav ul {
+      flex-direction: column; /* Menyusun link secara vertikal */
+      gap: 0;
+    }
+
+    .main-nav li a {
+      border-radius: 0; /* Hapus border radius untuk tampilan vertikal yang rapi */
+      text-align: center; /* Ratakan teks di tengah */
+    }
+    
+    /* Tambahkan border bawah untuk pemisah */
+    .main-nav li:not(:last-child) a {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+  }
+</style>
